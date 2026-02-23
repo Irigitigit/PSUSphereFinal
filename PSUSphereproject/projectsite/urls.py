@@ -22,10 +22,20 @@ from studentorg import views
 urlpatterns = [
     path ("admin/", admin.site.urls),
     path('', views.HomePageView.as_view(), name='home'),
+
+    # Student URLs
+    path('student_list', views.StudentList.as_view(), name='student_list'),
+    path('student_list/add', views.StudentCreateView.as_view(), name='student-add'),
+    path('student_list/<pk>',views.StudentUpdateView.as_view(), name='student-update'),
+    path('student_list/<pk>/delete', views.StudentDeleteView.as_view(), name='student-delete'),
+
+    # OrgMember URLs
     path('organization_members', views.OrgMemberList.as_view(), name='org_member_list'),
     path('organization_members/add', views.OrgMemberCreateView.as_view(), name='member-add'),
     path('organization_members/<pk>',views.OrgMemberUpdateView.as_view(), name='member-update'),
     path('organization_members/<pk>/delete', views.OrgMemberDeleteView.as_view(), name='member-delete'),
+
+    # Organization URLs
     path('organization_list', views.OrganizationList.as_view(), name='organization-list'),
     path('organization_list/add', views.OrganizationCreateView.as_view(), name='organization-add'),
     path('organization_list/<pk>',views.OrganizationUpdateView.as_view(), name='organization-update'),

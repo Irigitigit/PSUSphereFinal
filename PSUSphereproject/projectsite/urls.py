@@ -23,6 +23,12 @@ urlpatterns = [
     path ("admin/", admin.site.urls),
     path('', views.HomePageView.as_view(), name='home'),
 
+    # Program URLs
+    path('program_list', views.ProgramList.as_view(), name='program_list'),
+    path('program_list/add', views.ProgramCreateView.as_view(), name='program-add'),
+    path('program_list/<pk>',views.ProgramUpdateView.as_view(), name='program-update'),
+    path('program_list/<pk>/delete', views.ProgramDeleteView.as_view(), name='program-delete'),
+
     # College URLs
     path('college_list', views.CollegeList.as_view(), name='college_list'),
     path('college_list/add', views.CollegeCreateView.as_view(), name='college-add'),

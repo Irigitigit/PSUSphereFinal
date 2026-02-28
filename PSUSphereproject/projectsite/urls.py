@@ -20,8 +20,9 @@ from studentorg.views import HomePageView, OrganizationList, OrganizationCreateV
 from studentorg import views
 
 urlpatterns = [
-    path ("admin/", admin.site.urls),
-    path('home_page', views.HomePageView.as_view(), name='dashboard'),
+    #path ("admin/", admin.site.urls),
+    path('', views.HomePageView.as_view(), name='home'),
+
 
     # Program URLs
     path('program_list', views.ProgramList.as_view(), name='program_list'),

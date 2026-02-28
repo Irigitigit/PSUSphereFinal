@@ -21,7 +21,7 @@ from studentorg import views
 
 urlpatterns = [
     path ("admin/", admin.site.urls),
-    path('', views.HomePageView.as_view(), name='home'),
+    path('home_page', views.HomePageView.as_view(), name='dashboard'),
 
     # Program URLs
     path('program_list', views.ProgramList.as_view(), name='program_list'),

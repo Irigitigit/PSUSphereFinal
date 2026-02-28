@@ -42,14 +42,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for member in object_list %}
+                                {% for object in object_list %}
                                 <tr>
-                                    <td>{{ member.student }}</td>
-                                    <td>{{ member.organization }}</td> 
-                                    <td>{{ member.date_joined }}</td>
+                                    <td>{{ object.student }}</td>
+                                    <td>{{ object.organization }}</td> 
+                                    <td>{{ object.date_joined }}</td>
                                     <td>
-                                        <a href="{% url 'member-update' member.id %}">Edit</a>
-                                        <a href="{% url 'member-delete' member.id %}" class="text-danger">Delete</a>
+                                        <a href="{% url 'member-update' object.id %}">Edit</a>
+                                        <a href="{% url 'member-delete' object.id %}" class="text-danger">Delete</a>
                                     </td>
                                 </tr>
                                 {% empty %}

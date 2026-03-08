@@ -14,6 +14,11 @@ from pathlib import Path
 import os
 import socket
 
+if "pythonanywhere" in socket.gethostname():
+    SITE_ID = 1 # production site (psusphere.pythonanywhere.com)
+else:
+    SITE_ID = 2 # local site (127.0.0.1:8000)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -49,10 +54,6 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 
-if "pythonanywhere" in socket.gethostname():
-    SITE_ID = 1 # production site (psusphere.pythonanywhere.com)
-else:
-    SITE_ID = 2 # local site (127.0.0.1:8000)
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
